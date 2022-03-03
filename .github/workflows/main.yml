@@ -26,7 +26,12 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Set up Python
-        uses: actions/setup-python@v2.3.2
+#       - name: Set up Python
+#         uses: actions/setup-python@v2.3.2
+#         with:
+#           python-version: 3.8.9
+      - name: python build
+        uses: casperdcl/deploy-pypi@v2
         with:
-          python-version: 3.8.9
+           pip: wheel -w dist/ --no-deps .
+          
