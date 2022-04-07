@@ -30,8 +30,16 @@ jobs:
 #         uses: actions/setup-python@v2.3.2
 #         with:
 #           python-version: 3.8.9
-      - name: python build
-        uses: casperdcl/deploy-pypi@v2
-        with:
-           pip: wheel -w dist/ --no-deps .
+#       - name: python build
+#         uses: casperdcl/deploy-pypi@v2
+#         with:
+#            pip: wheel -w dist/ --no-deps .
+
+      - name: Generate the distribution archives
+        run: |
+          docker build --no-cache --rm \
+          -t test:latest \
+          -f Dockerfile \
+          .
+       
           
