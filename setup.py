@@ -12,7 +12,7 @@ setup(
         'pyarrow==4.0.1',
         'fastparquet==0.5.0',
         'pandas==1.1.5',
-        'transformers==4.5.1',
+        'transformers==4.30.0',
         'albumentations',
         'faiss',
         'sklearn',
